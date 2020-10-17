@@ -5,7 +5,7 @@
       :key="index"
       :class="['nav_item', { logoff: nav_item.label === 'Sair' }]"
     >
-      <svg width="18" :height="20" viewBox="0 0 22 14">
+      <svg width="18" height="20" viewBox="0 0 22 14">
         <path :d="nav_item.icon" />
       </svg>
       <div class="label subtitle">{{ nav_item.label }}</div>
@@ -52,7 +52,6 @@ export default {
   display: flex;
   flex-flow: column;
   cursor: pointer;
-  /* align-items: flex-start; */
   width: 100%;
   height: 100vh;
   padding: 0 1rem;

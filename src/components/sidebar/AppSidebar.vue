@@ -35,7 +35,7 @@ export default {
   display: flex;
   flex-flow: column;
   align-items: center;
-  padding: 1rem;
+  padding: 2rem 1rem;
   background-color: var(--background-secondary);
 }
 

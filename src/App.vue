@@ -2,16 +2,22 @@
   <div id="app">
     <app-sidebar />
     <div class="main">
-      main-section
+      <div class="title main_title">{{ $route.name }}</div>
+      <!-- <app-menu /> -->
+      <div class="main_content">
+        <router-view></router-view>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import AppSidebar from "./components/sidebar/AppSidebar"
+// import AppMenu from "./components/AppMenu"
 export default {
   components: {
     AppSidebar,
+    // AppMenu,
   },
 }
 </script>
@@ -47,6 +53,7 @@ body {
   width: 100vw;
   height: 100%;
   overflow: hidden;
+  font-size: 1.1rem;
 }
 
 #app {
@@ -58,7 +65,7 @@ body {
   grid-template-columns: 240px 1fr;
 }
 
-.title1 {
+.title {
   font-size: 2rem;
   font-weight: bold;
 }
@@ -76,4 +83,12 @@ body {
 .placeholder {
   color: var(--placeholder);
 }
+
+.main_title {
+  margin: 2rem;
+}
+
+/* .main_content {
+  padding: 2rem;
+} */
 </style>
