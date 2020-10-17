@@ -1,16 +1,43 @@
 <template>
   <div id="hover_card">
-    <slot></slot>
-    <div class="card">
-      Lorem ipsum, dolor sit amet!
+    <div class="icon">
+      <slot class="icon"></slot>
     </div>
+    <div class="card">{{ message }}</div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    message: String,
+  },
+}
 </script>
 
 <style scoped>
+#hover_card {
+  position: relative;
+}
 
+.card {
+  position: absolute;
+  opacity: 0;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--background);
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3.87931px;
+  padding: 1rem;
+  bottom: 30px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  transform: translateY(10px);
+  white-space: nowrap;
+}
+
+.icon:hover ~ .card {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>

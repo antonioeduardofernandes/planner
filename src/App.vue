@@ -3,7 +3,6 @@
     <app-sidebar />
     <div class="main">
       <div class="title main_title">{{ $route.name }}</div>
-      <!-- <app-menu /> -->
       <div class="main_content">
         <router-view></router-view>
       </div>
@@ -13,11 +12,9 @@
 
 <script>
 import AppSidebar from "./components/sidebar/AppSidebar"
-// import AppMenu from "./components/AppMenu"
 export default {
   components: {
     AppSidebar,
-    // AppMenu,
   },
 }
 </script>

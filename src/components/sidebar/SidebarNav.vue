@@ -1,5 +1,5 @@
 <template>
-  <div id="navbar">
+  <div id="app-navbar">
     <div
       v-for="(nav_item, index) in nav_items"
       :key="index"
@@ -47,7 +47,7 @@ export default {
 </script>
 
 <style scoped>
-#navbar {
+#app-navbar {
   margin-top: 4rem;
   display: flex;
   flex-flow: column;

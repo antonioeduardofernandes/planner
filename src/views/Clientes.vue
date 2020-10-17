@@ -1,18 +1,18 @@
 <template>
   <div>
-    <app-menu :links="['Lista', 'Detalhes']" />
+    <app-navbar :links="['Lista', 'Detalhes']" />
     <client-list :clients="clientes" />
   </div>
 </template>
 
 <script>
 import { ref } from "vue"
-import AppMenu from "../components/AppMenu"
+import AppNavbar from "../components/AppNavbar"
 import ClientList from "../components/clientes/ClientList"
 
 export default {
   components: {
-    AppMenu,
+    AppNavbar,
     ClientList,
   },
   setup() {
