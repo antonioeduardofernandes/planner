@@ -4,18 +4,26 @@
       <img src="../../assets/user-avatar.jpeg" alt="user_avatar" />
     </div>
     <div class="user_details">
-      <p class="name title2">Marcely Mesquita</p>
-      <p class="crp subtitle">CRP 99/999.999</p>
+      <p class="name title2">{{ user.name }}</p>
+      <p class="crp subtitle">{{ user.crp }}</p>
     </div>
     <sidebar-nav />
   </div>
 </template>
 
 <script>
+import { ref } from "vue"
 import SidebarNav from "./SidebarNav"
 export default {
   components: {
     SidebarNav,
+  },
+  setup() {
+    const user = ref({
+      name: "Marcely Mesquita",
+      crp: "99/999.999",
+    })
+    return { user }
   },
 }
 </script>
@@ -28,8 +36,7 @@ export default {
   flex-flow: column;
   align-items: center;
   padding: 1rem;
-  background-color: var(--color-background-secondary);
-  /* justify-content: center; */
+  background-color: var(--background-secondary);
 }
 
 .user_avatar img {

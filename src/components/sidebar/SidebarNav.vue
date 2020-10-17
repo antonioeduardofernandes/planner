@@ -1,21 +1,98 @@
 <template>
   <div id="navbar">
-    <div class="nav_item">
-      <div class="icon">
-        <img src="../../assets/icons/user.svg" alt="" />
-      </div>
-      <div class="label">Clientes</div>
+    <div
+      v-for="(nav_item, index) in nav_items"
+      :key="index"
+      :class="['nav_item', { logoff: nav_item.label === 'Sair' }]"
+    >
+      <svg width="18" :height="20" viewBox="0 0 22 14">
+        <path :d="nav_item.icon" />
+      </svg>
+      <div class="label subtitle">{{ nav_item.label }}</div>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+import { ref } from "vue"
+export default {
+  setup() {
+    const nav_items = ref([
+      {
+        label: "Clientes",
+        icon:
+          "M15 6C16.66 6 17.99 4.66 17.99 3C17.99 1.34 16.66 0 15 0C13.34 0 12 1.34 12 3C12 4.66 13.34 6 15 6ZM7 6C8.66 6 9.99 4.66 9.99 3C9.99 1.34 8.66 0 7 0C5.34 0 4 1.34 4 3C4 4.66 5.34 6 7 6ZM7 8C4.67 8 0 9.17 0 11.5V14H14V11.5C14 9.17 9.33 8 7 8ZM15 8C14.71 8 14.38 8.02 14.03 8.05C15.19 8.89 16 10.02 16 11.5V14H22V11.5C22 9.17 17.33 8 15 8Z",
+      },
+      {
+        label: "Documentos",
+        icon:
+          "M16 2H11.82C11.4 0.84 10.3 0 9 0C7.7 0 6.6 0.84 6.18 2H2C0.9 2 0 2.9 0 4V18C0 19.1 0.9 20 2 20H16C17.1 20 18 19.1 18 18V4C18 2.9 17.1 2 16 2ZM9 2C9.55 2 10 2.45 10 3C10 3.55 9.55 4 9 4C8.45 4 8 3.55 8 3C8 2.45 8.45 2 9 2ZM11 16H4V14H11V16ZM14 12H4V10H14V12ZM14 8H4V6H14V8Z",
+      },
+      {
+        label: "Ajustes",
+        icon:
+          "M16.4731 10.536C16.5091 10.236 16.5331 9.924 16.5331 9.6C16.5331 9.276 16.5091 8.964 16.4611 8.664L18.4891 7.08C18.6691 6.936 18.7171 6.672 18.6091 6.468L16.6891 3.144C16.5691 2.928 16.3171 2.856 16.1011 2.928L13.7131 3.888C13.2091 3.504 12.6811 3.192 12.0931 2.952L11.7331 0.408C11.6971 0.168 11.4931 0 11.2531 0H7.41311C7.17311 0 6.98112 0.168 6.94512 0.408L6.58511 2.952C5.99711 3.192 5.45711 3.516 4.96511 3.888L2.57711 2.928C2.36111 2.844 2.10911 2.928 1.98911 3.144L0.0691144 6.468C-0.0508856 6.684 -0.00288541 6.936 0.189115 7.08L2.21711 8.664C2.16911 8.964 2.13311 9.288 2.13311 9.6C2.13311 9.912 2.15711 10.236 2.20511 10.536L0.177114 12.12C-0.0028857 12.264 -0.0508856 12.528 0.0571144 12.732L1.97711 16.056C2.09711 16.272 2.34911 16.344 2.56511 16.272L4.95311 15.312C5.45711 15.696 5.98511 16.008 6.57311 16.248L6.93311 18.792C6.98111 19.032 7.17311 19.2 7.41311 19.2H11.2531C11.4931 19.2 11.6971 19.032 11.7211 18.792L12.0811 16.248C12.6691 16.008 13.2091 15.684 13.7011 15.312L16.0891 16.272C16.3051 16.356 16.5571 16.272 16.6771 16.056L18.5971 12.732C18.7171 12.516 18.6691 12.264 18.4771 12.12L16.4731 10.536V10.536ZM9.33311 13.2C7.35311 13.2 5.73311 11.58 5.73311 9.6C5.73311 7.62 7.35311 6 9.33311 6C11.3131 6 12.9331 7.62 12.9331 9.6C12.9331 11.58 11.3131 13.2 9.33311 13.2Z",
+      },
+      {
+        label: "Sair",
+        icon:
+          "M10.91 5.41L9.5 4L4.5 9L9.5 14L10.91 12.59L8.33 10L18 10L18 8L8.33 8L10.91 5.41ZM2 18L16 18C17.11 18 18 17.1 18 16L18 12L16 12L16 16L2 16L2 2L16 2L16 6L18 6L18 2C18 0.9 17.11 -7.78063e-08 16 -1.74846e-07L2 -1.39876e-06C0.900001 -1.49493e-06 1.49493e-06 0.899998 1.39876e-06 2L1.74846e-07 16C7.86805e-08 17.1 0.9 18 2 18Z",
+      },
+    ])
+    return {
+      nav_items,
+    }
+  },
+}
 </script>
 
 <style scoped>
+#navbar {
+  margin-top: 4rem;
+  display: flex;
+  flex-flow: column;
+  cursor: pointer;
+  /* align-items: flex-start; */
+  width: 100%;
+  height: 100vh;
+  padding: 0 1rem;
+}
+
 .nav_item {
   display: flex;
   align-items: center;
+  padding: 0.6rem;
+}
+
+svg {
+  margin-bottom: 0.2rem;
+  margin-right: 1rem;
+}
+
+path,
+.label {
+  transition: all 0.3s ease-in-out;
+  fill: var(--placeholder);
+}
+
+.nav_item:hover path {
+  fill: var(--accent);
+}
+
+.label {
+  background-color: transparent;
+  padding: 0.6rem 2rem 0.6rem 0.8rem;
+  border-radius: 10px;
+  text-align: start;
+  margin-left: 1rem;
+}
+
+.nav_item:hover .label {
+  color: var(--white);
+  background-color: var(--accent);
+}
+
+.logoff {
+  margin-top: 10rem;
 }
 </style>

@@ -18,14 +18,15 @@ export default {
 
 <style>
 :root {
-  --color-accent: #6a6fe9;
-  --color-background: #ffffff;
-  --color-background-secondary: #eef1f2;
-  --color-text: #484d56;
-  --color-warning: #e9c46a;
-  --color-danger: #e9726a;
-  --color-placeholder: #8e95a0;
-  --color-text-white: #e5e5e5;
+  --accent: #6a6fe9;
+  --background: #ffffff;
+  --background-secondary: #eef1f2;
+  --text: #484d56;
+  --gray: #e5e5e5;
+  --white: #ffffff;
+  --placeholder: #8e95a0;
+  --warning: #e9c46a;
+  --danger: #e9726a;
 }
 
 ::selection {
@@ -51,10 +52,10 @@ body {
 #app {
   height: 100vh;
   width: 100vw;
-  background-color: var(--color-background);
-  color: var(--color-text);
+  background-color: var(--background);
+  color: var(--text);
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 240px 1fr;
 }
 
 .title1 {
@@ -69,10 +70,10 @@ body {
 
 .subtitle {
   font-size: 1.1rem;
-  color: var(--color-placeholder);
+  color: var(--placeholder);
 }
 
 .placeholder {
-  color: var(--color-placeholder);
+  color: var(--placeholder);
 }
 </style>
