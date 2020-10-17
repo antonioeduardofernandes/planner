@@ -1,7 +1,7 @@
 <template>
   <div id="hover_card">
-    <div class="icon">
-      <slot class="icon"></slot>
+    <div class="container">
+      <slot></slot>
     </div>
     <div class="card">{{ message }}</div>
   </div>
@@ -18,6 +18,7 @@ export default {
 <style scoped>
 #hover_card {
   position: relative;
+  display: flex;
 }
 
 .card {
@@ -36,7 +37,12 @@ export default {
   white-space: nowrap;
 }
 
-.icon:hover ~ .card {
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.container:hover ~ .card {
   opacity: 1;
   transform: translateY(0);
 }
