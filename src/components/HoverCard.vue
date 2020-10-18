@@ -35,6 +35,7 @@ export default {
   align-items: center;
   transform: translateY(10px);
   white-space: nowrap;
+  pointer-events: none;
 }
 
 .container {

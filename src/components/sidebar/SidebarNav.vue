@@ -5,10 +5,7 @@
       :key="index"
       :class="['nav_item', { logoff: nav_item.label === 'Sair' }]"
     >
-      <img
-        :src="require(`../../assets/icons/sidebar/${nav_item.icon}.png`)"
-        alt=""
-      />
+      <img :src="require(`../../assets/icons/sidebar/${nav_item.icon}.png`)" />
       <div class="label subtitle">{{ nav_item.label }}</div>
     </div>
   </div>
@@ -54,13 +51,13 @@ export default {
   border-radius: 10px;
   text-align: start;
   margin-left: 2rem;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 img {
   filter: grayscale(100%);
-  opacity: .5;
-  transition: all .2s ease-in-out;
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
 }
 
 .nav_item:hover .label {

@@ -12,24 +12,27 @@
     <hover-card :message="client.email" class="icon_container">
       <img src="../../assets/icons/email.png" alt="" />
     </hover-card>
-    <div class="icon_container">
-      <img
-        src="../../assets/icons/menu_toggler.png"
-        alt=""
-        class="menu_toggler"
-      />
-    </div>
+    <client-menu />
   </div>
 </template>
 
 <script>
+import { ref } from "vue"
 import HoverCard from "../HoverCard"
+import ClientMenu from "../clientes/ClientMenu"
 export default {
+  components: {
+    HoverCard,
+    ClientMenu,
+  },
   props: {
     client: Object,
   },
-  components: {
-    HoverCard,
+
+  setup() {
+    const menu = ref(true)
+    const toggleMenu = () => (menu.value = true)
+    return { toggleMenu, menu }
   },
 }
 </script>
