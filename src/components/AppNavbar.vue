@@ -10,6 +10,9 @@
         {{ link }}
       </div>
     </div>
+    <div class="button">
+      <slot></slot>
+    </div>
   </div>
 </template>
 
@@ -27,12 +30,16 @@ export default {
   width: 100%;
   border-bottom: 1px solid var(--gray);
   margin: 3rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .links {
   display: flex;
   align-items: center;
-  margin: 0.6rem 2rem;
+  margin: 2rem 2rem;
+  width: 100%;
 }
 
 .link {
@@ -48,12 +55,17 @@ export default {
 
 .link:hover::after {
   content: " ";
-  bottom: -9px;
+  bottom: -28px;
   left: 0;
   right: 0;
   position: absolute;
   display: block;
   border-bottom: 4px solid var(--accent);
   background-color: red;
+}
+
+.button {
+  margin-right: 4rem;
+  margin-bottom: 0.5rem;
 }
 </style>
