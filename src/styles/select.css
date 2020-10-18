@@ -1,0 +1,34 @@
+input {
+  border: 2px solid transparent;
+  background-color: var(--background-secondary);
+  padding: 0.4rem 1rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 5px;
+  outline: none;
+  color: var(--accent);
+}
+
+input:focus {
+  border: 2px solid var(--accent);
+  background-color: var(--background-secondary);
+}
+
+input::placeholder {
+  color: var(--placeholder);
+  transition: all .2s ease-in-out;
+}
+
+input:focus::placeholder {
+  transform: translateX(-6px);
+  opacity: 0;
+}
+
+::selection {
+    background-color: var(--accent);
+    color: var(--background);
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  appearance: none; 
+}

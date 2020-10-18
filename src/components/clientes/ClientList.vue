@@ -18,6 +18,7 @@ export default {
 
 <style scoped>
 #client_list {
+  margin: 3rem;
   margin-left: 2rem;
 }
 </style>

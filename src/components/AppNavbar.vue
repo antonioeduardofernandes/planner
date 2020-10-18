@@ -29,7 +29,6 @@ export default {
 #app_menu {
   width: 100%;
   border-bottom: 1px solid var(--gray);
-  margin: 3rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,7 +60,6 @@ export default {
   position: absolute;
   display: block;
   border-bottom: 4px solid var(--accent);
-  background-color: red;
 }
 
 .button {

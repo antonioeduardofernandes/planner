@@ -20,6 +20,9 @@ export default {
 </script>
 
 <style>
+@import url("./styles/input.css");
+@import url("./styles/select.css");
+
 :root {
   --accent: #6a6fe9;
   --background: #ffffff;
@@ -82,10 +85,6 @@ body {
 }
 
 .main_title {
-  margin: 2rem;
+  margin: 2rem 2rem 0rem 2rem;
 }
-
-/* .main_content {
-  padding: 2rem;
-} */
 </style>

@@ -1,6 +1,6 @@
 <template>
-  <button>
-    <img src="../assets/icons/add.png" alt="" />
+  <button @click="$emit('click')">
+    <img :src="require(`../assets/icons/${icon}.png`)" alt="" />
     {{ label }}
   </button>
 </template>
@@ -9,6 +9,10 @@
 export default {
   props: {
     label: String,
+    icon: {
+      String,
+      default: "add",
+    },
   },
 }
 </script>
@@ -28,12 +32,7 @@ button {
   white-space: nowrap;
 }
 
-button:hover img {
-  transform: rotate(90deg);
-}
-
 img {
   margin-right: 1rem;
-  transition: all 0.4s ease-in-out;
 }
 </style>
