@@ -15,7 +15,7 @@ input:focus {
 
 input::placeholder {
   color: var(--placeholder);
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 input:focus::placeholder {
@@ -24,11 +24,12 @@ input:focus::placeholder {
 }
 
 ::selection {
-    background-color: var(--accent);
-    color: var(--background);
+  background-color: var(--accent);
+  color: var(--background);
 }
 
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  appearance: none; 
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  appearance: none;
 }
+

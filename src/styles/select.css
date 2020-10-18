@@ -1,4 +1,4 @@
-input {
+select {
   border: 2px solid transparent;
   background-color: var(--background-secondary);
   padding: 0.4rem 1rem;
@@ -6,19 +6,15 @@ input {
   border-radius: 5px;
   outline: none;
   color: var(--accent);
+  min-width: 280px;
 }
 
-input:focus {
+select:focus {
   border: 2px solid var(--accent);
   background-color: var(--background-secondary);
 }
 
-input::placeholder {
-  color: var(--placeholder);
-  transition: all .2s ease-in-out;
-}
-
-input:focus::placeholder {
+select:focus::placeholder {
   transform: translateX(-6px);
   opacity: 0;
 }
@@ -26,9 +22,4 @@ input:focus::placeholder {
 ::selection {
     background-color: var(--accent);
     color: var(--background);
-}
-
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  appearance: none; 
 }
