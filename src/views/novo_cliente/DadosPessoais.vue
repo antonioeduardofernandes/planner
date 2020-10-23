@@ -101,17 +101,6 @@ export default {
   margin-right: 0.7rem;
 }
 
-.row {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
-}
-
-.row .input_container {
-  margin-right: 4rem;
-}
-
 .input_container .label {
   margin-bottom: 0.2rem;
 }

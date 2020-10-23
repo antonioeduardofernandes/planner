@@ -21,7 +21,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .content {
   margin-top: 2rem;
   margin-left: 2rem;
@@ -46,5 +46,16 @@ export default {
 button {
   margin-right: 6rem;
   margin-top: 2rem;
+}
+
+.form .row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.form .row .input_container {
+  margin-right: 4rem;
 }
 </style>

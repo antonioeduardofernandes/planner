@@ -2,20 +2,25 @@ import { createRouter, createWebHistory } from "vue-router"
 import Clientes from "../views/Clientes.vue"
 import NovoCliente from "../views/novo_cliente/NovoCliente.vue"
 import DadosPessoais from "../views/novo_cliente/DadosPessoais.vue"
+import Prontuario from "../views/novo_cliente/Prontuario.vue"
 
 const routes = [
   {
     path: "/clientes",
-    name: "Clientes",
     component: Clientes,
+    meta: { title: "Clientes" },
   },
   {
     path: "/novocliente",
-    name: "Novo Cliente",
     component: NovoCliente,
-    children:[
-      {path:"", component:DadosPessoais}
-    ]
+    children: [
+      { path: "dados", component: DadosPessoais, meta: { title: "Novo Cliente" } },
+      {
+        path: "prontuario",
+        component: Prontuario,
+        meta: { title: "Novo Cliente" },
+      },
+    ],
   },
 ]
 

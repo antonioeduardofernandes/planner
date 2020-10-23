@@ -2,7 +2,7 @@
   <div id="app">
     <app-sidebar />
     <div class="main">
-      <div class="title main_title">{{ $route.name }}</div>
+      <div class="title main_title">{{ $route.meta.title }}</div>
       <div class="main_content">
         <router-view></router-view>
       </div>
@@ -20,8 +20,8 @@ export default {
 </script>
 
 <style>
-@import url("./styles/input.css");
 @import url("./styles/select.css");
+@import url("./styles/input.css");
 
 :root {
   --accent: #6a6fe9;
@@ -35,10 +35,6 @@ export default {
   --danger: #e9726a;
 }
 
-::selection {
-  display: none;
-}
-
 *,
 html,
 body {
@@ -47,6 +43,7 @@ body {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
   font-size: 13px;
+  user-select: none;
 }
 
 body {
@@ -57,7 +54,7 @@ body {
 }
 
 #app {
-  height: 100vh;
+  height: 100%;
   width: 100vw;
   background-color: var(--background);
   color: var(--text);

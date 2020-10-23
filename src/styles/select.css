@@ -1,25 +1,25 @@
 select {
-  border: 2px solid transparent;
-  background-color: var(--background-secondary);
-  padding: 0.4rem 1rem;
-  transition: all 0.3s ease-in-out;
-  border-radius: 5px;
-  outline: none;
-  color: var(--accent);
-  min-width: 280px;
-}
-
-select:focus {
-  border: 2px solid var(--accent);
-  background-color: var(--background-secondary);
-}
-
-select:focus::placeholder {
-  transform: translateX(-6px);
-  opacity: 0;
-}
-
-::selection {
+    border: 2px solid transparent;
+    background-color: var(--background-secondary);
+    transition: all 0.3s ease-in-out;
+    border-radius: 5px;
+    outline: none;
+    color: var(--accent);
+    min-width: 280px;
+    padding: .4rem 1rem;
+  }
+  
+  select:focus {
+    border: 2px solid var(--accent);
+    background-color: var(--background-secondary);
+  }
+  
+  select:focus::placeholder {
+    transform: translateX(-6px);
+    opacity: 0;
+  }
+  
+  ::selection {
     background-color: var(--accent);
     color: var(--background);
-}
+  }

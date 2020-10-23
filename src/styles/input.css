@@ -1,26 +1,20 @@
-input {
+input[type="text"],
+input[type="number"],
+input[type="date"] {
   border: 2px solid transparent;
   background-color: var(--background-secondary);
-  padding: 0.4rem 1rem;
   transition: all 0.3s ease-in-out;
   border-radius: 5px;
   outline: none;
   color: var(--accent);
+  padding: .4rem 1rem;
 }
 
-input:focus {
+input[type="text"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
   border: 2px solid var(--accent);
   background-color: var(--background-secondary);
-}
-
-input::placeholder {
-  color: var(--placeholder);
-  transition: all 0.2s ease-in-out;
-}
-
-input:focus::placeholder {
-  transform: translateX(-6px);
-  opacity: 0;
 }
 
 ::selection {
@@ -32,4 +26,3 @@ input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   appearance: none;
 }
-
