@@ -3,6 +3,7 @@ import Clientes from "../views/Clientes.vue"
 import NovoCliente from "../views/novo_cliente/NovoCliente.vue"
 import DadosPessoais from "../views/novo_cliente/DadosPessoais.vue"
 import Prontuario from "../views/novo_cliente/Prontuario.vue"
+import Relatorios from "../views/novo_cliente/Relatorios.vue"
 
 const routes = [
   {
@@ -14,10 +15,19 @@ const routes = [
     path: "/novocliente",
     component: NovoCliente,
     children: [
-      { path: "dados", component: DadosPessoais, meta: { title: "Novo Cliente" } },
+      {
+        path: "dados",
+        component: DadosPessoais,
+        meta: { title: "Novo Cliente" },
+      },
       {
         path: "prontuario",
         component: Prontuario,
+        meta: { title: "Novo Cliente" },
+      },
+      {
+        path: "relatorios",
+        component: Relatorios,
         meta: { title: "Novo Cliente" },
       },
     ],

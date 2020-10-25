@@ -1,11 +1,23 @@
 <template>
-  <app-navbar
-    :links="['Dados Pessoais', 'Prontuário', 'Relatórios', 'Documentos']"
-  />
-  <div class="content">
-    <router-view />
-    <div class="button_row">
-      <app-button label="Avançar" icon="arrow" />
+  <div id="novo_cliente">
+    <app-navbar
+      :links="['Dados Pessoais', 'Prontuário', 'Relatórios', 'Documentos']"
+    />
+    <div class="content">
+      <router-view />
+
+      <div class="button_row">
+        <app-button label="Avançar" icon right>
+          <svg
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
+              fill="white"
+            />
+          </svg>
+        </app-button>
+      </div>
     </div>
   </div>
 </template>
@@ -22,25 +34,27 @@ export default {
 </script>
 
 <style>
+#novo_cliente {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
 .content {
   margin-top: 2rem;
   margin-left: 2rem;
   width: 100%;
   padding-right: 4rem;
-  height: 100vh;
-}
-
-.form {
-  margin-top: 1rem;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
 }
 
 .button_row {
-  justify-content: flex-end;
-  align-items: flex-end;
   width: 100%;
   display: flex;
-  align-items: center;
-  margin-bottom: 2rem;
+  justify-content: flex-end;
+  align-self: flex-end;
 }
 
 button {
