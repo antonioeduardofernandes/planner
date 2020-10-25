@@ -1,5 +1,5 @@
 <template>
-  <div id="app_checkbox" @click="toggleCheckbox">
+  <div id="app_checkbox">
     <div class="box">
       <div class="background" :class="{ checked: checked }" />
       <svg class="icon" width="17" height="14" viewBox="0 0 17 14" fill="none">
@@ -18,18 +18,10 @@
 </template>
 
 <script>
-import { ref } from "vue"
 export default {
   props: {
     label: String,
-    value: [String, Boolean, Number],
-  },
-  setup() {
-    const checked = ref(true)
-    const toggleCheckbox = () => {
-      checked.value = !checked.value
-    }
-    return { toggleCheckbox, checked }
+    checked: Boolean,
   },
 }
 </script>

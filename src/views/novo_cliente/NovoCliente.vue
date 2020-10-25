@@ -52,7 +52,7 @@ button {
   width: 100%;
   display: flex;
   align-items: center;
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
 }
 
 .form .row .input_container {

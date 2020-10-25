@@ -1,23 +1,35 @@
 <template>
   <div id="profile">
-    <div class="option_container">
+    <div>
       <div class="title">Sintomas</div>
-      <div class="list" v-for="(sintoma, index) in sintomas" :key="index">
-        <div class="item">
-          <app-checkbox :label="sintoma.name" :value="sintoma.value" />
+      <div class="list_container">
+        <div class="list" v-for="(sintoma, index) in sintomas" :key="index">
+          <div class="item">
+            <app-checkbox
+              :label="sintoma.name"
+              :checked="sintomasApresentados.includes(sintoma.value)"
+              @click="toggleSymptom(sintoma.value)"
+            />
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- <div class="option_container">
-      <div class="title">Vícios</div>
-      <div class="list" v-for="(vicio, index) in vicios" :key="index">
-        <div class="item">
-          <input type="checkbox" :name="vicio.value" :id="vicio.value" />
-          <label :for="vicio.value">{{ vicio.name }}</label>
+    <div>
+      <div class="title">Vicios</div>
+      <div class="list_container">
+        <div class="list" v-for="(vicio, index) in vicios" :key="index">
+          <div class="item">
+            <app-checkbox
+              :label="vicio.name"
+              :checked="viciosApresentados.includes(vicio.value)"
+              @click="toggleAddiction(vicio.value)"
+            />
+          </div>
         </div>
       </div>
-    </div> -->
+    </div>
+
   </div>
 </template>
 
@@ -29,23 +41,50 @@ export default {
     AppCheckbox,
   },
   setup() {
+    let sintomasApresentados = ref([])
+    let viciosApresentados = ref([])
+
     const sintomas = ref([
-      { name: "Depressão", value: "depressao" },
-      { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
-      // { name: "Insônia", value: "insonia" },
+      { name: "Ansiedade alta", value: "ansiedade" },
+      { name: "tremores e tonturas", value: "tremores/tonturas" },
+      { name: "Sudorese", value: "sudorese" },
+      { name: "Fobia", value: "fobia" },
+      { name: "Taquicardia", value: "taquicardia" },
     ])
-    const vicios = ref([{ name: "Álcool", value: "alcool" }])
-    return { sintomas, vicios }
+
+    const vicios = ref([
+      { name: "Álcool", value: "alcool" },
+      { name: "Tabaco", value: "tabaco" },
+      { name: "Drogas ilícitas", value: "drogas" },
+      { name: "Tecnologia", value: "tecnologia" },
+      { name: "Redes sociais", value: "redes sociais" },
+      { name: "Medicamentos", value: "medicamentos" },
+      { name: "Jogos de azar e apostas", value: "jogos" },
+      { name: "Jogos eletrônicos ", value: "jogos de azar" },
+    ])
+
+    const toggleSymptom = item => {
+      sintomasApresentados.value.includes(item)
+        ? (sintomasApresentados.value = sintomasApresentados.value.filter(
+            e => e != item
+          ))
+        : sintomasApresentados.value.push(item)
+    }
+    const toggleAddiction = item => {
+      viciosApresentados.value.includes(item)
+        ? (viciosApresentados.value = viciosApresentados.value.filter(
+            e => e != item
+          ))
+        : viciosApresentados.value.push(item)
+    }
+    return {
+      sintomas,
+      vicios,
+      sintomasApresentados,
+      viciosApresentados,
+      toggleSymptom,
+      toggleAddiction,
+    }
   },
 }
 </script>
@@ -55,10 +94,13 @@ export default {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
-.list {
+
+.list_container {
   display: grid;
-  grid-template-columns: minmax(100px) 1fr;
+  column-gap: 0.2rem;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
 }
+
 .item {
   display: flex;
   align-items: center;
