@@ -1,35 +1,46 @@
 <template>
   <div id="profile">
     <div>
-      <div class="title">Sintomas</div>
-      <div class="list_container">
-        <div class="list" v-for="(sintoma, index) in sintomas" :key="index">
-          <div class="item">
-            <app-checkbox
-              :label="sintoma.name"
-              :checked="sintomasApresentados.includes(sintoma.value)"
-              @click="toggleSymptom(sintoma.value)"
-            />
+      <div class="title">CID</div>
+      <select name="cid">
+        <option value="">Selecione</option>
+        <option v-for="(cid, index) in 10" :key="index" value="cid"
+          >CID {{ cid }}</option
+        >
+      </select>
+    </div>
+
+    <div class="lists">
+      <div>
+        <div class="title">Sintomas</div>
+        <div class="list_container">
+          <div class="list" v-for="(sintoma, index) in sintomas" :key="index">
+            <div class="item">
+              <app-checkbox
+                :label="sintoma.name"
+                :checked="sintomasApresentados.includes(sintoma.value)"
+                @click="toggleSymptom(sintoma.value)"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="title">Vicios</div>
+        <div class="list_container">
+          <div class="list" v-for="(vicio, index) in vicios" :key="index">
+            <div class="item">
+              <app-checkbox
+                :label="vicio.name"
+                :checked="viciosApresentados.includes(vicio.value)"
+                @click="toggleAddiction(vicio.value)"
+              />
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    <div>
-      <div class="title">Vicios</div>
-      <div class="list_container">
-        <div class="list" v-for="(vicio, index) in vicios" :key="index">
-          <div class="item">
-            <app-checkbox
-              :label="vicio.name"
-              :checked="viciosApresentados.includes(vicio.value)"
-              @click="toggleAddiction(vicio.value)"
-            />
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
 </template>
 
@@ -46,7 +57,7 @@ export default {
 
     const sintomas = ref([
       { name: "Ansiedade alta", value: "ansiedade" },
-      { name: "tremores e tonturas", value: "tremores/tonturas" },
+      { name: "Tremores e tonturas", value: "tremores/tonturas" },
       { name: "Sudorese", value: "sudorese" },
       { name: "Fobia", value: "fobia" },
       { name: "Taquicardia", value: "taquicardia" },
@@ -90,15 +101,15 @@ export default {
 </script>
 
 <style scoped>
-#profile {
+.lists {
+  margin-top: 3rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
 .list_container {
   display: grid;
-  column-gap: 0.2rem;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
 }
 
 .item {
