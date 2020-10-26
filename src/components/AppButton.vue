@@ -24,7 +24,6 @@ export default {
 <style scoped>
 #app_button {
   background-color: var(--accent);
-  display: flex;
   outline: none;
   border: none;
   align-items: center;
@@ -33,14 +32,22 @@ export default {
   color: var(--background);
   font-size: 1.1rem;
   cursor: pointer;
+  display: flex;
+  align-items: center;
   justify-content: space-between;
   white-space: nowrap;
 }
 
+.label {
+  font-size: 1.1rem;
+}
+
 .icon {
-  width: 14px;
-  height: 14px;
+  --icon-size: 16px;
   --icon-margin: 2rem;
+  width: var(--icon-size);
+  height: var(--icon-size);
+  margin-bottom: 0.7px;
 }
 
 .right {

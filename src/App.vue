@@ -20,6 +20,7 @@ export default {
 </script>
 
 <style>
+@import url("./styles/button.css");
 @import url("./styles/select.css");
 @import url("./styles/input.css");
 
@@ -31,7 +32,7 @@ export default {
   --gray: #e5e5e5;
   --white: #ffffff;
   --placeholder: #8e95a0;
-  --warning: #e9c46a;
+  --yellow: #e9c46a;
   --danger: #e9726a;
 }
 

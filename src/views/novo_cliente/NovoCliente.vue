@@ -7,33 +7,31 @@
       <router-view />
 
       <div class="button_row">
-        <app-button label="Avançar" icon right>
-          <svg
-            viewBox="0 0 16 16"
-          >
+        <button>
+          Avançar
+          <svg>
             <path
               d="M8 0L6.59 1.41L12.17 7H0V9H12.17L6.59 14.59L8 16L16 8L8 0Z"
               fill="white"
             />
           </svg>
-        </app-button>
+        </button>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import AppButton from "../../components/AppButton"
 import AppNavbar from "../../components/AppNavbar"
 export default {
   components: {
-    AppButton,
     AppNavbar,
   },
 }
 </script>
 
 <style>
+
 #novo_cliente {
   height: 100%;
   display: flex;
@@ -72,4 +70,6 @@ button {
 .form .row .input_container {
   margin-right: 4rem;
 }
+
+
 </style>
