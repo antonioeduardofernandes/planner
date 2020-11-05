@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import AppSidebar from "./components/sidebar/AppSidebar"
+import AppSidebar from "./components/AppSidebar"
 export default {
   components: {
     AppSidebar,
@@ -20,20 +20,18 @@ export default {
 </script>
 
 <style>
-@import url("./styles/button.css");
-@import url("./styles/select.css");
-@import url("./styles/input.css");
-
 :root {
-  --accent: #6a6fe9;
+  --accent: var(--teal);
   --background: #ffffff;
-  --background-secondary: #eef1f2;
+  --background-secondary: #f5f6f9;
   --text: #484d56;
   --gray: #e5e5e5;
   --white: #ffffff;
   --placeholder: #8e95a0;
   --yellow: #e9c46a;
   --danger: #e9726a;
+  --teal: #01c4d4;
+  --purple: #6a6fe9;
 }
 
 *,
@@ -57,32 +55,9 @@ body {
 #app {
   height: 100%;
   width: 100vw;
-  background-color: var(--background);
+  background-color: var(--background-secondary);
   color: var(--text);
   display: grid;
-  grid-template-columns: 240px 1fr;
-}
-
-.title {
-  font-size: 2rem;
-  font-weight: bold;
-}
-
-.title2 {
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: var(--placeholder);
-}
-
-.placeholder {
-  color: var(--placeholder);
-}
-
-.main_title {
-  margin: 2rem 2rem 0rem 2rem;
+  grid-template-columns: 100px 1fr;
 }
 </style>
